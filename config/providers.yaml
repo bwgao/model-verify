@@ -1,0 +1,30 @@
+openai_official:
+  name: openai_official
+  type: openai
+  base_url: https://api.openai.com/v1
+  api_key_env: OPENAI_API_KEY
+  models:
+    - gpt-4o
+    - gpt-4o-mini
+
+anthropic_official:
+  name: anthropic_official
+  type: anthropic
+  base_url: https://api.anthropic.com
+  api_key_env: ANTHROPIC_API_KEY
+  models:
+    - claude-opus-4-20250514
+    - claude-sonnet-4-20250514
+
+example_reseller:
+  name: example_reseller
+  type: openai_compatible
+  base_url: ${RESELLER_BASE_URL}
+  api_key_env: RESELLER_API_KEY
+  models:
+    - gpt-4o
+  claims:
+    region: us-east-1
+    tier: premium
+
+

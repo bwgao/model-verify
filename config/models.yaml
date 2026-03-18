@@ -1,0 +1,91 @@
+gpt-4o:
+  name: gpt-4o
+  display_name: GPT-4o
+  characteristics:
+    family: gpt
+    developer: openai
+    mmlu_baseline: 0.887
+  supports_logprobs: true
+  context_window: 128000
+
+gpt-4o-mini:
+  name: gpt-4o-mini
+  display_name: GPT-4o Mini
+  characteristics:
+    family: gpt
+    developer: openai
+  context_window: 128000
+
+claude-opus-4-20250514:
+  name: claude-opus-4-20250514
+  display_name: Claude Opus 4 (2025-05-14)
+  characteristics:
+    family: claude
+    developer: anthropic
+    tier: opus
+    hard_math_baseline: 0.75
+    hard_code_baseline: 0.80
+    hard_reasoning_baseline: 0.80
+    expected_response_length: very_long
+    expected_ttft_min: 1500
+    expected_ttft_max: 8000
+    expected_tps_min: 8
+    expected_tps_max: 25
+  supports_logprobs: false
+  context_window: 200000
+
+claude-sonnet-4-20250514:
+  name: claude-sonnet-4-20250514
+  display_name: Claude Sonnet 4 (2025-05-14)
+  characteristics:
+    family: claude
+    developer: anthropic
+    tier: sonnet
+    hard_math_baseline: 0.45
+    hard_code_baseline: 0.55
+    hard_reasoning_baseline: 0.50
+    expected_response_length: medium
+    expected_ttft_min: 500
+    expected_ttft_max: 3000
+    expected_tps_min: 20
+    expected_tps_max: 60
+  supports_logprobs: false
+  context_window: 200000
+
+claude-opus-4-6:
+  name: claude-opus-4-6
+  display_name: Claude Opus 4.6
+  characteristics:
+    family: claude
+    developer: anthropic
+    version: "4.6"
+    tier: opus
+    hard_math_baseline: 0.75
+    hard_code_baseline: 0.80
+    hard_reasoning_baseline: 0.80
+    expected_response_length: very_long
+    expected_ttft_min: 1500
+    expected_ttft_max: 8000
+    expected_tps_min: 8
+    expected_tps_max: 25
+  supports_logprobs: false
+  context_window: 200000
+
+claude-opus-4-6-thinking:
+  name: claude-opus-4-6-thinking
+  display_name: Claude Opus 4.6 Thinking (Antigravity)
+  characteristics:
+    family: claude
+    developer: anthropic
+    version: "4.6"
+    tier: opus
+    hard_math_baseline: 0.75
+    hard_code_baseline: 0.80
+    hard_reasoning_baseline: 0.80
+    expected_response_length: very_long
+    expected_ttft_min: 2000
+    expected_ttft_max: 15000
+    expected_tps_min: 5
+    expected_tps_max: 20
+  supports_logprobs: false
+  context_window: 200000

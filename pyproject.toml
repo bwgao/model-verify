@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model-verify"
+version = "0.1.0"
+description = "LLM Model Verification System - Detect fake model substitution in API resellers"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.12"
+authors = [
+    {name = "Model Verify Team"}
+]
+keywords = ["llm", "verification", "api", "fingerprinting", "security"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "openai>=1.40.0",
+    "anthropic>=0.34.0",
+    "httpx>=0.27.0",
+    "pyyaml>=6.0",
+    "rich>=13.0.0",
+    "click>=8.1.0",
+    "numpy>=1.26.0",
+    "scipy>=1.12.0",
+    "sentence-transformers>=3.0.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.8.0",
+    "types-PyYAML>=6.0",
+    "ruff>=0.2.0",
+]
+
+[project.scripts]
+model-verify = "main:cli"
+
+[project.urls]
+Homepage = "https://github.com/example/model-verify"
+Documentation = "https://github.com/example/model-verify#readme"
+Repository = "https://github.com/example/model-verify"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["probes*", "analysis*", "utils*", "config*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: marks tests as slow",
+    "integration: marks integration tests",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
